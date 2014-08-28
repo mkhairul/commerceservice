@@ -15,3 +15,7 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::match(array('GET', 'POST'), '/product/store', array('uses' => 'ProductController@store'));
+Route::match(array('GET'), '/product/retrieve/{id?}', array('uses' => 'ProductController@retrieve'));
+Route::match(array('GET'), '/product/remove/{id}', array('uses' => 'ProductController@remove'));
